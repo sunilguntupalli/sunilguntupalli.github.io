@@ -19,10 +19,10 @@ const experience = [
   ["2026 — Now", "Yeskar Technologies Inc.", "Java Full Stack Engineer"],
   ["2025 — 2026", "OpenQQuantify", "Java Full Stack Engineer"],
   ["2024 — 2025", "Sodexo", "Java Backend Developer"],
-  ["2023 — 2024", "Aramark", "Java Backend Developer"],
+  ["2023 — 2024", "Aramark", "Java Software Engineer"],
   ["2021 — 2023", "Motorola Solutions", "Software Engineer"],
-  ["2022 — 2022", "Deloitte", "Software Engineer"],
-  ["2020 — 2021", "Mad Crayons", "Web Developer"],
+  ["2022 — 2022", "Deloitte", "Software Engineering Analyst"],
+  ["2020 — 2021", "Mad Crayons", "Software Engineer Intern"],
 ];
 
 const projects = [
