@@ -89,7 +89,7 @@ export default function Home() {
           <header className="nav-bar">
             <a className="brand" href="#home" aria-label="Home">
               <span>SG</span>
-              <b>Portfolio</b>
+              <b>Sunil Guntupalli</b>
             </a>
             <nav aria-label="Main navigation">
               <a href="#work">Work</a>
