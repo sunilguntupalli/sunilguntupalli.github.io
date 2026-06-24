@@ -28,30 +28,33 @@ const experience = [
 const projects = [
   {
     icon: Cloud,
-    title: "Cloud-native services",
+    title: "Cloud Cost Optimizer",
     description:
-      "Spring Boot services and secure APIs designed for dependable, zero-downtime delivery.",
-    stat: "25%",
-    label: "faster response times",
-    tags: ["Java", "Spring Boot", "Kubernetes"],
+      "A cloud cost dashboard for discovering Azure resources, analyzing utilization, and surfacing practical savings opportunities.",
+    stat: "5",
+    label: "API domains",
+    tags: ["Java", "React", "Azure", "Terraform"],
+    href: "https://github.com/sunilguntupalli/cloud-cost-optimizer",
   },
   {
     icon: ServerCog,
-    title: "Incident automation",
+    title: "Insurance Claims System",
     description:
-      "Monitoring, log correlation, and practical workflows that bring production issues into focus.",
-    stat: "35%",
-    label: "faster resolution",
-    tags: ["Splunk", "Terraform", "CI/CD"],
+      "An event-driven claims workflow for submission, approval, settlement, and notification—designed as independent Spring Boot services.",
+    stat: "4",
+    label: "event-driven services",
+    tags: ["Spring Boot", "Kafka", "Redis", "PostgreSQL"],
+    href: "https://github.com/sunilguntupalli/insurance-claims-management-system",
   },
   {
     icon: Database,
-    title: "Cost visibility",
+    title: "Healthcare Patient Portal",
     description:
-      "A clear operational view of cloud resources, utilization, and the APIs behind it.",
-    stat: "12+",
-    label: "connected REST APIs",
-    tags: ["React", "PostgreSQL", "Azure"],
+      "A secure patient experience for registration, sign-in, appointments, and medical-record access with a modern Java and React stack.",
+    stat: "4",
+    label: "core patient flows",
+    tags: ["Spring Security", "JWT", "React", "Docker"],
+    href: "https://github.com/sunilguntupalli/healthcare-patient-portal",
   },
 ];
 
@@ -108,6 +111,7 @@ export default function Home() {
             <div className="hero__actions">
               <LinkButton href="#work" primary>Explore selected work <ArrowDownRight /></LinkButton>
               <LinkButton href="/resume.pdf"><Download /> Resume</LinkButton>
+              <LinkButton href="https://github.com/sunilguntupalli" label="View GitHub profile"><Github /> GitHub</LinkButton>
             </div>
           </div>
 
@@ -129,9 +133,9 @@ export default function Home() {
         </div>
         <div className="stats" aria-label="Career statistics">
           <div><b>5+</b><span>years of engineering</span></div>
-          <div><b>15+</b><span>projects delivered</span></div>
-          <div><b>99.9%</b><span>uptime mindset</span></div>
-          <div><b>1M+</b><span>daily users supported</span></div>
+          <div><b>3</b><span>flagship systems</span></div>
+          <div><b>7</b><span>engineering roles</span></div>
+          <div><b>Java</b><span>full stack focus</span></div>
         </div>
       </section>
 
@@ -139,10 +143,10 @@ export default function Home() {
         <div className="container">
           <div className="section-heading">
             <div><p className="eyebrow">Selected work</p><h2>Real systems, measured <em>outcomes.</em></h2></div>
-            <p>From backend architecture to the production signals around it, each project begins with a sharper question.</p>
+            <p>Public implementations that show the backend architecture, cloud tooling, and product thinking behind the work.</p>
           </div>
           <div className="projects">
-            {projects.map(({ icon: Icon, title, description, stat, label, tags }, index) => (
+            {projects.map(({ icon: Icon, title, description, stat, label, tags, href }, index) => (
               <motion.article className="project-card" key={title} whileHover={{ y: -7 }} transition={{ duration: 0.25 }}>
                 <div className={`project-card__visual project-card__visual--${index}`}><Icon /></div>
                 <div className="project-card__body">
@@ -151,6 +155,7 @@ export default function Home() {
                   <p>{description}</p>
                   <div className="project-card__metric"><b>{stat}</b><span>{label}</span></div>
                   <div className="tag-list">{tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                  <a className="project-card__link" href={href} target="_blank" rel="noreferrer">View on GitHub <ArrowUpRight /></a>
                 </div>
               </motion.article>
             ))}
