@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, MotionConfig } from "framer-motion";
 import {
   ArrowDownRight,
   ArrowUpRight,
@@ -69,14 +69,25 @@ function LinkButton({
   children,
   primary = false,
   label,
+  external = false,
+  download = false,
 }: {
   href: string;
   children: React.ReactNode;
   primary?: boolean;
   label?: string;
+  external?: boolean;
+  download?: boolean;
 }) {
   return (
-    <a className={`button ${primary ? "button--primary" : ""}`} href={href} aria-label={label}>
+    <a
+      className={`button ${primary ? "button--primary" : ""}`}
+      href={href}
+      aria-label={label}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noreferrer" : undefined}
+      download={download || undefined}
+    >
       {children}
     </a>
   );
@@ -84,7 +95,10 @@ function LinkButton({
 
 export default function Home() {
   return (
-    <main>
+    <>
+      <a className="skip-link" href="#main-content">Skip to main content</a>
+      <MotionConfig reducedMotion="user">
+      <main id="main-content">
       <section className="hero" id="home">
         <div className="hero__image" aria-hidden="true" />
         <div className="hero__veil" aria-hidden="true" />
@@ -99,25 +113,25 @@ export default function Home() {
               <a href="#experience">Experience</a>
               <a href="#about">About</a>
             </nav>
-            <a className="nav-contact" href="#contact">Let&apos;s talk <ArrowUpRight /></a>
+            <a className="nav-contact" href="#contact">Let&apos;s talk <ArrowUpRight aria-hidden="true" /></a>
           </header>
 
           <div className="hero__copy">
-            <p className="eyebrow"><Sparkles /> Java full stack engineer</p>
+            <p className="eyebrow"><Sparkles aria-hidden="true" /> Java full stack engineer</p>
             <h1>Make complex systems feel <em>simple.</em></h1>
             <p className="hero__lede">
               Building resilient cloud applications, useful developer tools, and the operational clarity teams need to move with confidence.
             </p>
             <div className="hero__actions">
-              <LinkButton href="#work" primary>Explore selected work <ArrowDownRight /></LinkButton>
-              <LinkButton href="/resume.pdf"><Download /> Resume</LinkButton>
-              <LinkButton href="https://github.com/sunilguntupalli" label="View GitHub profile"><Github /> GitHub</LinkButton>
+              <LinkButton href="#work" primary>Explore selected work <ArrowDownRight aria-hidden="true" /></LinkButton>
+              <LinkButton href="/resume.pdf" download><Download aria-hidden="true" /> Resume</LinkButton>
+              <LinkButton href="https://github.com/sunilguntupalli" label="View GitHub profile" external><Github aria-hidden="true" /> GitHub</LinkButton>
             </div>
           </div>
 
           <div className="hero__footer">
             <p>Currently focused on<br /><b>distributed systems &amp; cloud platforms</b></p>
-            <div className="hero__availability"><i /> Available for thoughtful opportunities</div>
+            <div className="hero__availability"><i aria-hidden="true" /> Available for thoughtful opportunities</div>
           </div>
         </div>
       </section>
@@ -128,7 +142,7 @@ export default function Home() {
           <h2>Built for the work that happens <em>after</em> the launch.</h2>
           <div>
             <p>I&apos;m a Java full stack engineer with 5+ years of experience designing and operating applications where reliability actually matters. The aim is always the same: a system people can understand, trust, and evolve.</p>
-            <a className="text-link" href="#contact">Start a conversation <ArrowUpRight /></a>
+            <a className="text-link" href="#contact">Start a conversation <ArrowUpRight aria-hidden="true" /></a>
           </div>
         </div>
         <div className="stats" aria-label="Career statistics">
@@ -148,14 +162,14 @@ export default function Home() {
           <div className="projects">
             {projects.map(({ icon: Icon, title, description, stat, label, tags, href }, index) => (
               <motion.article className="project-card" key={title} whileHover={{ y: -7 }} transition={{ duration: 0.25 }}>
-                <div className={`project-card__visual project-card__visual--${index}`}><Icon /></div>
+                <div className={`project-card__visual project-card__visual--${index}`}><Icon aria-hidden="true" /></div>
                 <div className="project-card__body">
                   <span className="project-card__number">0{index + 1}</span>
                   <h3>{title}</h3>
                   <p>{description}</p>
                   <div className="project-card__metric"><b>{stat}</b><span>{label}</span></div>
                   <div className="tag-list">{tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                  <a className="project-card__link" href={href} target="_blank" rel="noreferrer">View on GitHub <ArrowUpRight /></a>
+                  <a className="project-card__link" href={href} target="_blank" rel="noreferrer" aria-label={`View ${title} on GitHub`}>View on GitHub <ArrowUpRight aria-hidden="true" /></a>
                 </div>
               </motion.article>
             ))}
@@ -166,7 +180,7 @@ export default function Home() {
       <section className="capabilities section container">
         <div className="section-heading"><div><p className="eyebrow">How I work</p><h2>Good systems have a <em>rhythm.</em></h2></div></div>
         <div className="capability-list">
-          {capabilities.map(([number, title, body]) => <article key={title}><span>{number}</span><h3>{title}</h3><p>{body}</p><Code2 /></article>)}
+          {capabilities.map(([number, title, body]) => <article key={title}><span>{number}</span><h3>{title}</h3><p>{body}</p><Code2 aria-hidden="true" /></article>)}
         </div>
       </section>
 
@@ -179,7 +193,7 @@ export default function Home() {
           </div>
           <div className="experience__panel" aria-label="Scrollable work experience timeline">
             <div className="experience__list">
-              {experience.map(([date, company, role]) => <article key={`${company}-${date}`}><span>{date}</span><h3>{company}</h3><p>{role}</p><ArrowUpRight /></article>)}
+              {experience.map(([date, company, role]) => <article key={`${company}-${date}`}><span>{date}</span><h3>{company}</h3><p>{role}</p><ArrowUpRight aria-hidden="true" /></article>)}
             </div>
           </div>
         </div>
@@ -189,10 +203,12 @@ export default function Home() {
         <div className="container footer__content">
           <p className="eyebrow">Open to new conversations</p>
           <h2>Have a system worth <em>making better?</em></h2>
-          <a className="email-link" href="mailto:sunilguntupalli@outlook.com">sunilguntupalli@outlook.com <ArrowUpRight /></a>
-          <div className="footer__bottom"><span>© 2026 · Cincinnati, Ohio</span><div><a href="https://github.com/sunilguntupalli" aria-label="GitHub"><Github /></a><a href="https://www.linkedin.com/in/sunilguntupalli" aria-label="LinkedIn"><Linkedin /></a><a href="mailto:sunilguntupalli@outlook.com" aria-label="Email"><Mail /></a></div></div>
+          <a className="email-link" href="mailto:sunilguntupalli@outlook.com">sunilguntupalli@outlook.com <ArrowUpRight aria-hidden="true" /></a>
+          <div className="footer__bottom"><span>© 2026 · Cincinnati, Ohio</span><div><a href="https://github.com/sunilguntupalli" target="_blank" rel="noreferrer" aria-label="GitHub profile"><Github aria-hidden="true" /></a><a href="https://www.linkedin.com/in/sunilguntupalli" target="_blank" rel="noreferrer" aria-label="LinkedIn profile"><Linkedin aria-hidden="true" /></a><a href="mailto:sunilguntupalli@outlook.com" aria-label="Email Sunil Guntupalli"><Mail aria-hidden="true" /></a></div></div>
         </div>
       </footer>
-    </main>
+      </main>
+      </MotionConfig>
+    </>
   );
 }
