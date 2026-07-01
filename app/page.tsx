@@ -141,12 +141,12 @@ export default function Home() {
         <div className="intro__grid">
           <h2>Built for the work that happens <em>after</em> the launch.</h2>
           <div>
-            <p>I&apos;m a Java full stack engineer with 5+ years of experience designing and operating applications where reliability actually matters. The aim is always the same: a system people can understand, trust, and evolve.</p>
+            <p>I&apos;m a Java full stack engineer with 6+ years of experience designing and operating applications where reliability actually matters. The aim is always the same: a system people can understand, trust, and evolve.</p>
             <a className="text-link" href="#contact">Start a conversation <ArrowUpRight aria-hidden="true" /></a>
           </div>
         </div>
         <div className="stats" aria-label="Career statistics">
-          <div><b>5+</b><span>years of engineering</span></div>
+          <div><b>6+</b><span>years of engineering</span></div>
           <div><b>3</b><span>flagship systems</span></div>
           <div><b>7</b><span>engineering roles</span></div>
           <div><b>Java</b><span>full stack focus</span></div>
