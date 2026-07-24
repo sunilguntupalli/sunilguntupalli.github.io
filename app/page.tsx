@@ -16,13 +16,13 @@ import {
 } from "lucide-react";
 
 const experience = [
-  ["2026 — Now", "Yeskar Technologies Inc.", "Java Full Stack Engineer"],
+  ["2026 — Now", "Yeskar Technologies Inc.", "Software Engineer · Java Backend & Cloud Services"],
   ["2025 — 2026", "OpenQQuantify", "Java Full Stack Engineer"],
-  ["2024 — 2025", "Sodexo", "Java Backend Developer"],
-  ["2023 — 2024", "Aramark", "Java Software Engineer"],
-  ["2021 — 2023", "Motorola Solutions", "Software Engineer"],
-  ["2022 — 2022", "Deloitte", "Software Engineering Analyst"],
-  ["2020 — 2021", "Mad Crayons", "Software Engineer Intern"],
+  ["2024 — 2025", "Sodexo", "Student Worker · Operations & Team Support"],
+  ["2023 — 2024", "Athenian Hospitality", "Student Worker · Hospitality Operations"],
+  ["2021 — 2023", "Motorola Solutions", "Software Engineer · Java Microservices & APIs"],
+  ["2022 — 2022", "Deloitte", "Software Engineering Analyst · Java & SailPoint IAM"],
+  ["2020 — 2021", "Mad Crayons", "Software Engineer Intern · Java, Spring Boot & React"],
 ];
 
 const projects = [
@@ -30,7 +30,7 @@ const projects = [
     icon: Cloud,
     title: "Cloud Cost Optimizer",
     description:
-      "A cloud cost dashboard for discovering Azure resources, analyzing utilization, and surfacing practical savings opportunities.",
+      "Cloud analytics application with Java/Spring Boot APIs, React dashboards, Azure resource analysis, Docker/Kubernetes deployment patterns, and Terraform infrastructure structure.",
     stat: "5",
     label: "API domains",
     tags: ["Java", "React", "Azure", "Terraform"],
@@ -40,7 +40,7 @@ const projects = [
     icon: ServerCog,
     title: "Insurance Claims System",
     description:
-      "An event-driven claims workflow for submission, approval, settlement, and notification—designed as independent Spring Boot services.",
+      "Event-driven claims platform using Spring Boot, Kafka, PostgreSQL, Redis, Docker, validation workflows, asynchronous claim-status updates, and operational API endpoints.",
     stat: "4",
     label: "event-driven services",
     tags: ["Spring Boot", "Kafka", "Redis", "PostgreSQL"],
@@ -50,7 +50,7 @@ const projects = [
     icon: Database,
     title: "Healthcare Patient Portal",
     description:
-      "A secure patient experience for registration, sign-in, appointments, and medical-record access with a modern Java and React stack.",
+      "Full-stack healthcare workflow platform with Spring Boot APIs, React screens, JWT security, PostgreSQL/Flyway persistence, Dockerized setup, and role-aware patient, doctor, and admin access.",
     stat: "4",
     label: "core patient flows",
     tags: ["Spring Security", "JWT", "React", "Docker"],
@@ -59,9 +59,9 @@ const projects = [
 ];
 
 const capabilities = [
-  ["01", "Design", "Service architecture that stays understandable as systems grow."],
-  ["02", "Build", "Modern Java applications with thoughtful, secure API contracts."],
-  ["03", "Operate", "Observability and automation for calm, predictable releases."],
+  ["01", "Design", "API-first Java services with clear contracts, validation rules, and SQL-backed data models."],
+  ["02", "Build", "Spring Boot microservices, React integrations, secure IAM flows, and event-driven workflows."],
+  ["03", "Operate", "CI/CD support, observability, documentation, and practical production troubleshooting."],
 ];
 
 function LinkButton({
@@ -117,10 +117,10 @@ export default function Home() {
           </header>
 
           <div className="hero__copy">
-            <p className="eyebrow"><Sparkles aria-hidden="true" /> Java full stack engineer</p>
-            <h1>Make complex systems feel <em>simple.</em></h1>
+            <p className="eyebrow"><Sparkles aria-hidden="true" /> Java software engineer</p>
+            <h1>Build secure Java systems that <em>scale.</em></h1>
             <p className="hero__lede">
-              Building resilient cloud applications, useful developer tools, and the operational clarity teams need to move with confidence.
+              Java/Spring Boot engineer focused on microservices, REST APIs, cloud-ready deployments, IAM/security workflows, SQL-backed systems, Kafka integrations, and release-ready backend delivery.
             </p>
             <div className="hero__actions">
               <LinkButton href="#work" primary>Explore selected work <ArrowDownRight aria-hidden="true" /></LinkButton>
@@ -130,26 +130,26 @@ export default function Home() {
           </div>
 
           <div className="hero__footer">
-            <p>Currently focused on<br /><b>distributed systems &amp; cloud platforms</b></p>
+            <p>Currently focused on<br /><b>Java backend, cloud &amp; IAM systems</b></p>
             <div className="hero__availability"><i aria-hidden="true" /> Available for thoughtful opportunities</div>
           </div>
         </div>
       </section>
 
       <section className="intro section container" id="about">
-        <p className="eyebrow">A practical engineering partner</p>
+        <p className="eyebrow">A practical Java engineering partner</p>
         <div className="intro__grid">
-          <h2>Built for the work that happens <em>after</em> the launch.</h2>
+          <h2>Built for backend work that survives <em>production.</em></h2>
           <div>
-            <p>I&apos;m a Java full stack engineer with 6+ years of experience designing and operating applications where reliability actually matters. The aim is always the same: a system people can understand, trust, and evolve.</p>
+            <p>I&apos;m a Java-focused Software Engineer building Spring Boot services, REST APIs, microservices, secure IAM workflows, event-driven integrations, and cloud-ready applications. I work across API design, implementation, testing, CI/CD support, documentation, and production troubleshooting.</p>
             <a className="text-link" href="#contact">Start a conversation <ArrowUpRight aria-hidden="true" /></a>
           </div>
         </div>
         <div className="stats" aria-label="Career statistics">
-          <div><b>6+</b><span>years of engineering</span></div>
+          <div><b>Java</b><span>Spring Boot focus</span></div>
           <div><b>3</b><span>flagship systems</span></div>
-          <div><b>7</b><span>engineering roles</span></div>
-          <div><b>Java</b><span>full stack focus</span></div>
+          <div><b>IAM</b><span>SailPoint + RBAC</span></div>
+          <div><b>Cloud</b><span>Docker + Kubernetes</span></div>
         </div>
       </section>
 
@@ -157,7 +157,7 @@ export default function Home() {
         <div className="container">
           <div className="section-heading">
             <div><p className="eyebrow">Selected work</p><h2>Real systems, measured <em>outcomes.</em></h2></div>
-            <p>Public implementations that show the backend architecture, cloud tooling, and product thinking behind the work.</p>
+            <p>Public implementations that show Java backend architecture, secure API design, cloud tooling, and domain-aware product thinking.</p>
           </div>
           <div className="projects">
             {projects.map(({ icon: Icon, title, description, stat, label, tags, href }, index) => (
@@ -188,8 +188,8 @@ export default function Home() {
         <div className="container experience__grid">
           <div className="experience__intro">
             <p className="eyebrow">Experience</p>
-            <h2>A record of shipping<br /><em>with care.</em></h2>
-            <p className="experience__note">Scroll inside the timeline to see the full path.</p>
+            <h2>A focused path through<br /><em>Java delivery.</em></h2>
+            <p className="experience__note">Java was used across the engineering roles; Sodexo and Athenian are included as additional operations experience.</p>
           </div>
           <div className="experience__panel" aria-label="Scrollable work experience timeline">
             <div className="experience__list">
@@ -202,9 +202,9 @@ export default function Home() {
       <footer id="contact">
         <div className="container footer__content">
           <p className="eyebrow">Open to new conversations</p>
-          <h2>Have a system worth <em>making better?</em></h2>
+          <h2>Need Java systems built <em>cleanly?</em></h2>
           <a className="email-link" href="mailto:sunilguntupalli@outlook.com">sunilguntupalli@outlook.com <ArrowUpRight aria-hidden="true" /></a>
-          <div className="footer__bottom"><span>© 2026 · Cincinnati, Ohio</span><div><a href="https://github.com/sunilguntupalli" target="_blank" rel="noreferrer" aria-label="GitHub profile"><Github aria-hidden="true" /></a><a href="https://www.linkedin.com/in/sunilguntupalli" target="_blank" rel="noreferrer" aria-label="LinkedIn profile"><Linkedin aria-hidden="true" /></a><a href="mailto:sunilguntupalli@outlook.com" aria-label="Email Sunil Guntupalli"><Mail aria-hidden="true" /></a></div></div>
+          <div className="footer__bottom"><span>© 2026 · Open to relocate nationwide</span><div><a href="https://github.com/sunilguntupalli" target="_blank" rel="noreferrer" aria-label="GitHub profile"><Github aria-hidden="true" /></a><a href="https://www.linkedin.com/in/sunilguntupalli" target="_blank" rel="noreferrer" aria-label="LinkedIn profile"><Linkedin aria-hidden="true" /></a><a href="mailto:sunilguntupalli@outlook.com" aria-label="Email Sunil Guntupalli"><Mail aria-hidden="true" /></a></div></div>
         </div>
       </footer>
       </main>
